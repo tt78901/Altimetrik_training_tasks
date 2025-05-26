@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Performance Charts</title>
+<style>
+
+        body {
+
+            font-family: 'Segoe UI', sans-serif;
+
+            background-color: #f4f6f9;
+
+            padding: 40px;
+
+            text-align: center;
+
+        }
+
+        h2 {
+
+            color: #0d6efd;
+
+            margin-bottom: 30px;
+
+        }
+
+        .chart-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+            margin-top: 30px;
+
+        }
+
+        .chart-box {
+
+            background: white;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+
+            width: 500px;
+
+        }
+
+        img {
+
+            width: 100%;
+
+            border-radius: 8px;
+
+        }
+
+        a {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background-color: #0d6efd;
+
+            padding: 10px 20px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+        }
+
+        a:hover {
+
+            background-color: #094ec0;
+
+        }
+</style>
+</head>
+<body>
+<h2>📊 Student Performance Charts</h2>
+<div class="chart-container">
+<div class="chart-box">
+<img src="data:image/png;base64,{{ chart1 }}" alt="Average Marks Chart">
+</div>
+<div class="chart-box">
+<img src="data:image/png;base64,{{ chart2 }}" alt="Attendance Chart">
+</div>
+</div>
+<a href="{% url 'home' %}">← Back to Home</a>
+</body>
+</html>
+ 

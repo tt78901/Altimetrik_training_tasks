@@ -1,0 +1,70 @@
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Course</th>
+<th>Exam Marks</th>
+<th>Assignment Marks</th>
+<th>Attendance %</th>
+<th>Actions</th>  <!-- Add this -->
+</tr>
+</thead>
+<tbody>
+       {% for record in performances %}
+<tr>
+<td>{{ record.student.name }}</td>
+<td>{{ record.course_name }}</td>
+<td>{{ record.exam_marks }}</td>
+<td>{{ record.assignment_marks }}</td>
+<td>{{ record.attendance_percent }}</td>
+<td>
+<a href="{% url 'update_performance' record.id %}" class="btn btn-sm btn-warning">✏️ Edit</a>
+<form action="{% url 'delete_performance' record.id %}" method="post" style="display:inline;">
+                   {% csrf_token %}
+<button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this record?')">🗑 Delete</button>
+</form>
+</td>
+</tr>
+       {% endfor %}
+</tbody>
+</table>
+ 
+ 
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Course</th>
+<th>Exam Marks</th>
+<th>Assignment Marks</th>
+<th>Attendance %</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+
+    {% for record in performances %}
+<tr>
+<td>{{ record.student.name }}</td>
+<td>{{ record.course_name }}</td>
+<td>{{ record.exam_marks }}</td>
+<td>{{ record.assignment_marks }}</td>
+<td>{{ record.attendance_percent }}</td>
+<td>
+<!-- Edit Performance -->
+<a href="{% url 'update_performance' pk=record.id %}" class="btn btn-sm btn-warning">✏️ Edit</a>
+<!-- Delete Performance -->
+<form action="{% url 'delete_performance' pk=record.id %}" method="post" style="display:inline;">
+
+          {% csrf_token %}
+<button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this record?')">🗑 Delete</button>
+</form>
+</td>
+</tr>
+
+    {% endfor %}
+</tbody>
+</table>
+record.id - This website is for sale! - record Resources and Information.
+This website is for sale! record.id is your first and best source for information about record. Here you will also find topics relating to issues of general interest. We hope you find what you are ...
+ 
